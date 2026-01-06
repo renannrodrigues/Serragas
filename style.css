@@ -11,7 +11,7 @@
         }
 
         header {
-            background: linear-gradient(135deg, #2d4370 0%, #1e2d4d 100%);
+            background: linear-gradient(135deg, #2d4370 0%, #1a771e 100%);
             color: white;
             padding: 1rem 0;
             position: fixed;
@@ -54,8 +54,8 @@
             background-size: cover;       /* Faz a imagem cobrir toda a seção */
             background-position: center;  /* Centraliza a imagem */
             background-repeat: no-repeat; /* Evita repetição da imagem */
-            color: #ffffff;                 /* Garante contraste do texto */
-            padding: 160px 20px;          /* Ajuste do espaçamento da seção */
+            color: #a9b6a8;                 /* Garante contraste do texto */
+            padding: 190px 20px;          /* Ajuste do espaçamento da seção */
             text-align: center;           /* Centraliza o conteúdo */
 }
 
@@ -137,7 +137,7 @@
         }
 
         .features {
-            background: #f8f9fa;
+            background: #f8faf8;
         }
 
         .features-grid {
@@ -158,7 +158,7 @@
         }
 
         .about {
-            background: linear-gradient(135deg, #2d4370 0%, #5789c6 100%);
+            background: linear-gradient(135deg, #2d4370 0%, #1a771e 100%);
             color: white;
         }
 
