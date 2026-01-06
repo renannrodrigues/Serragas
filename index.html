@@ -11,23 +11,31 @@
     <header>
         <nav>
             <div class="logo">
-            <img src="./img/logo.png" alt="Logo Serra Gás" />
-            <span class="logo-text">
-                <img class="zap-icon" src="https://www.oxidetoni.com.br/wp-content/themes/oxidetoni/images/whatsapp.png">
-            <h3>(54) 99946-5299</h3>
-</span>
-        </div>
-            
-            <ul class="nav-links">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="#venda e locação de cilíndros">Venda e Locação de Cilíndros</a></li>
+        <img src="./img/logo.png" alt="Logo Serra Gás" />
+        <span class="logo-text">
+            <img class="zap-icon" src="https://www.oxidetoni.com.br/wp-content/themes/oxidetoni/images/whatsapp.png" alt="WhatsApp">
+            <a href="https://wa.me/5554999465299?text=Ol%C3%A1,%20eu%20vim%20pelo%20site%20e%20gostaria%20de%20conversar%20com%20voc%C3%AAs." 
+               target="_blank" style="text-decoration:none; color:inherit;">
+                <h3>(54) 99946-5299</h3>
+            </a>
+        </span>
+    </div>    
+    
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
-
-            </ul>
-        </nav>
+    <!-- MENU -->
+    <ul class="nav-links">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#produtos">Produtos</a></li>        
+        <li><a href="#locacao">Venda e Locação de Cilíndros</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+    </ul>
+</nav>
     </header>
 
     <section id="home" class="hero">
@@ -60,23 +68,14 @@
         </div>
     </section>
 
-    <section id="produtos" class="section gases-bg">
-        <h2 class="section-title">Venda e Locação de Cilíndros</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-icon">🏷️</div>
-                <h3>Venda de Cilindros</h3>
-                <p>Oferecemos cilindros novos e certificados para venda, garantindo segurança e conformidade com as normas vigentes.</p>
-            </div>
+    <section id="locacao" class="section gases-bg">
+  <h2 class="section-title">Venda e Locação de Cilíndros</h2>
+  <div class="product-card">
+    <img src="./img/litroscilindros.png" alt="Cilindros de oxigênio com volumes" class="product-image">
+  </div>
+</section>
 
-            <div class="product-card">
-                <div class="product-icon">🔄</div>
-                <h3>Locação de Cilindros</h3>
-                <p>Serviço flexível de locação de cilindros, ideal para atender às necessidades temporárias de sua empresa ou instituição.</p>
-            </div>
 
-        </div>
-    </section>
 
     <section class="features">
         <div class="section">
@@ -158,29 +157,6 @@
         <p>&copy; 2026 Serra Gás - Gases Medicinais. Todos os direitos reservados.</p>
         <p>CNPJ: 00.000.000/0001-00 | Autorização ANVISA: 00000000000</p>
     </footer>
-
-    <script>
-        function handleSubmit(e) {
-    e.preventDefault();
-
-    // Pegar os valores do formulário
-    const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
-    const telefone = document.getElementById('telefone').value;
-    const mensagem = document.getElementById('mensagem').value;
-
-    // Montar a mensagem para o WhatsApp
-    const texto = `Olá, meu nome é ${nome}.%0AEmail: ${email}%0ATelefone: ${telefone}%0AMensagem: ${mensagem}`;
-
-    // Número do WhatsApp (55 + DDD + número)
-    const numero = "5554999465299";
-
-    // Abrir o WhatsApp com a mensagem
-    window.open(`https://wa.me/${numero}?text=${texto}`, '_blank');
-
-    // Limpar formulário
-    e.target.reset();
-}
-</script>
+    <script src="/js/menu.js"></script>
 </body>
 </html>
