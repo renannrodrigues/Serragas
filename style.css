@@ -114,15 +114,28 @@ nav {
 
 .hero {
     position: relative;
-    background-image: url('./img/cilindros-verdes.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #ffffff;
-    padding: 190px 20px;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    color: white;
 }
 
+/* fundo com vídeo */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* camada escurecida */
 .hero::before {
     content: "";
     position: absolute;
@@ -131,7 +144,8 @@ nav {
     z-index: 1;
 }
 
-.hero * {
+/* conteúdo por cima do vídeo */
+.hero-content {
     position: relative;
     z-index: 2;
 }
@@ -139,14 +153,11 @@ nav {
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    animation: fadeInUp 1s;
 }
 
 .hero p {
     font-size: 1.3rem;
     margin-bottom: 2rem;
-    opacity: 0.95;
-    animation: fadeInUp 1s 0.2s backwards;
 }
 
 .cta-button {

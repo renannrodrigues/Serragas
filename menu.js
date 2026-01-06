@@ -35,7 +35,7 @@ function handleSubmit(e) {
 
     const mensagemCodificada = encodeURIComponent(texto);
 
-    const numero = "554999465299";
+    const numero = "5554999465299";
 
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
