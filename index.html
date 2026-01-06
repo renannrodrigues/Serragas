@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serra Gás - Gases Medicinais de Qualidade</title>
+    <link rel="stylesheet" href="/style.css">
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+            <img src="./img/logo.png" alt="Logo Serra Gás" />
+            <span class="logo-text">
+                <img class="zap-icon" src="https://www.oxidetoni.com.br/wp-content/themes/oxidetoni/images/whatsapp.png">
+            <h3>(54) 99946-5299</h3>
+</span>
+        </div>
+            
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>SERRA GÁS</h1>
+        <h1>Gases Medicinais e Industriais de Excelência</h1>
+        <p>Fornecimento confiável para industrias, clínicas e alimentícios.</p>
+        <a href="#contato" class="cta-button">Solicite um Orçamento</a>
+    </section>
+
+    <section id="produtos" class="section gases-bg">
+        <h2 class="section-title">Nossos Produtos</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon">🔬</div>
+                <h3>Gases Medicinais</h3>
+                <p>Oxigênio Medicinal - Óxido Nitroso - Ar Medicinal - Dióxido de carbono</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">⚡</div>
+                <h3>Gases Industriais</h3>
+                <p>Acetileno (C2H2) - Argônio (Ar) - Dióxido de carbono (CO2) - Misturas para solda - Nitrôgenio (N2) - Oxigênio (O2)</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="section">
+            <h2 class="section-title">Por Que Escolher a Serra Gás?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <h3>Certificação Total</h3>
+                    <p>Produtos certificados pela ANVISA e em conformidade com todas as normas sanitárias vigentes</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Entrega Rápida</h3>
+                    <p>Logística eficiente com entregas programadas e atendimento emergencial</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Segurança Garantida</h3>
+                    <p>Cilindros inspecionados e manutenção preventiva de equipamentos</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">👨‍⚕️</div>
+                    <h3>Suporte Técnico</h3>
+                    <p>Equipe especializada para orientação e treinamento no uso adequado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="about">
+        <div class="section">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Sobre a Serra Gás</h2>
+                    <p>Com mais de 8 anos de experiência no mercado, a Serra Gás é referência no fornecimento de gases medicinais para instituições de saúde em toda região.</p>
+                    <p>Nossa missão é garantir que industrias, clínicas e profissionais alimenticios tenham acesso a produtos de máxima qualidade, com segurança e pontualidade.</p>
+                    <p>Investimos constantemente em tecnologia, treinamento e processos para manter os mais altos padrões de excelência no setor.</p>
+                </div>
+                <div class="about-text">
+                    <h3 style="font-size: 2rem; margin-bottom: 1rem;">Nossos Valores</h3>
+                    <ul style="list-style: none; font-size: 1.1rem; line-height: 2;">
+                        <li>✓ Qualidade sem compromissos</li>
+                        <li>✓ Segurança em primeiro lugar</li>
+                        <li>✓ Compromisso com a saúde</li>
+                        <li>✓ Atendimento humanizado</li>
+                        <li>✓ Inovação constante</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="section">
+        <h2 class="section-title">Entre em Contato</h2>
+        <div class="contact-form">
+            <form onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Serra Gás - Gases Medicinais. Todos os direitos reservados.</p>
+        <p>CNPJ: 00.000.000/0001-00 | Autorização ANVISA: 00000000000</p>
+    </footer>
+
+    <script>
+        function handleSubmit(e) {
+    e.preventDefault();
+
+    // Pegar os valores do formulário
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const telefone = document.getElementById('telefone').value;
+    const mensagem = document.getElementById('mensagem').value;
+
+    // Montar a mensagem para o WhatsApp
+    const texto = `Olá, meu nome é ${nome}.%0AEmail: ${email}%0ATelefone: ${telefone}%0AMensagem: ${mensagem}`;
+
+    // Número do WhatsApp (55 + DDD + número)
+    const numero = "5554999465299";
+
+    // Abrir o WhatsApp com a mensagem
+    window.open(`https://wa.me/${numero}?text=${texto}`, '_blank');
+
+    // Limpar formulário
+    e.target.reset();
+}
+</script>
+</body>
+</html>
