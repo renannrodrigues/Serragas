@@ -116,7 +116,7 @@ nav {
 }
 
 .nav-links a {
-    color: white;
+    color: rgb(14, 0, 0);
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
@@ -410,7 +410,7 @@ nav {
 }
 
 .submit-button {
-    background: #2d4370;
+    background: #333333;
     color: white;
     padding: 1rem 2rem;
     border-radius: 8px;
@@ -424,13 +424,13 @@ nav {
 }
 
 .submit-button:disabled {
-    background: #6b7a9b;
+    background: #313131;
     cursor: not-allowed;
     transform: none;
 }
 
 .submit-button:hover:not(:disabled) {
-    background: #1e2d4d;
+    background: #000000;
     transform: scale(1.02);
 }
 
@@ -575,7 +575,7 @@ footer a:hover {
     display: inline-block;
     margin-top: 2rem;
     padding: 0.8rem 2rem;
-    background: #2d4370;
+    background: #353333;
     color: white;
     border-radius: 8px;
     text-decoration: none;
@@ -584,7 +584,7 @@ footer a:hover {
 }
 
 .voltar-btn:hover {
-    background: #1e2d4d;
+    background: #0e0f11;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
