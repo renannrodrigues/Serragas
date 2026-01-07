@@ -16,6 +16,22 @@ body {
     background: #fff;
 }
 
+/* Skip Link para Acessibilidade */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #2d4370;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 9999;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 /* Header */
 header {
     background: linear-gradient(135deg, #2d4370 0%, #1a771e 100%);
@@ -181,6 +197,12 @@ nav {
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
 .hero p {
@@ -365,6 +387,17 @@ nav {
     font-family: inherit;
 }
 
+/* Validação Visual */
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+    border-color: #ff4444;
+}
+
+.form-group input:valid:not(:placeholder-shown),
+.form-group textarea:valid:not(:placeholder-shown) {
+    border-color: #1a771e;
+}
+
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
@@ -486,6 +519,8 @@ footer a:hover {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     text-align: center;
     transition: 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 
 .catalogo-item:hover {
@@ -496,7 +531,7 @@ footer a:hover {
 .catalogo-item img {
     width: 120px;
     height: auto;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem;
 }
 
 .catalogo-item h3 {
@@ -509,11 +544,31 @@ footer a:hover {
     color: #666;
     margin-bottom: 1rem;
     font-size: 0.95rem;
+    flex-grow: 1;
 }
 
-.catalogo-item h2 {
+.catalogo-item .preco {
     color: #1a771e;
     font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.btn-comprar {
+    display: inline-block;
+    background: #1a771e;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    margin-top: auto;
+}
+
+.btn-comprar:hover {
+    background: #145a16;
+    transform: scale(1.05);
 }
 
 .voltar-btn {
@@ -573,6 +628,10 @@ footer a:hover {
 
     .hero h1 {
         font-size: 1.8rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
     }
 
     .hero p {
@@ -671,6 +730,10 @@ footer a:hover {
 
     .hero h1 {
         font-size: 1.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.2rem;
     }
 
     .cta-button {

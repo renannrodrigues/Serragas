@@ -5,27 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SerraGás - Gases Medicinais e Industriais</title>
 
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Serra Gás - Fornecimento de gases medicinais, industriais e alimentícios com qualidade, segurança e entrega rápida.">
     <meta name="keywords" content="gases medicinais, oxigênio, nitrogênio, cilindros, gases industriais, CO2, argônio">
     <meta name="author" content="Serra Gás">
 
-    <link rel="stylesheet" href="/style.css">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://serragas.com.br">
+    <meta property="og:title" content="SerraGás - Gases Medicinais e Industriais">
+    <meta property="og:description" content="Fornecimento confiável de gases com qualidade e segurança">
+    <meta property="og:image" content="./img/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://serragas.com.br">
+    <meta property="twitter:title" content="SerraGás - Gases Medicinais e Industriais">
+    <meta property="twitter:description" content="Fornecimento confiável de gases com qualidade e segurança">
+    <meta property="twitter:image" content="./img/logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./img/logo.png">
+
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
+    <!-- Skip Link para Acessibilidade -->
+    <a href="#main" class="skip-link">Pular para conteúdo principal</a>
+
     <header>
         <nav>
             <div class="logo">
-                <img src="./img/logo.png" alt="Logo Serra Gás">
+                <a href="index.html" aria-label="Página inicial Serra Gás">
+                    <img src="./img/logo.png" alt="Logo Serra Gás" loading="eager">
+                </a>
 
                 <div class="logo-text">
                     <img class="zap-icon" src="./img/whatsapp.png" alt="WhatsApp">
-                    <a href="https://wa.me/5554999465299?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20informações." target="_blank" style="color: inherit; text-decoration: none;">
+                    <a href="https://wa.me/5554999465299?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20informações." 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Entre em contato via WhatsApp"
+                       style="color: inherit; text-decoration: none;">
                         <h3>(54) 99946-5299</h3>
                     </a>
 
-                    <a href="https://www.instagram.com/kldserragas" target="_blank" class="icon-link">
+                    <a href="https://www.instagram.com/kldserragas" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="icon-link"
+                       aria-label="Visite nosso Instagram">
                         <img src="./img/instagram.png" alt="Instagram">
                         <span>@kldserragas</span>
                     </a>
@@ -49,19 +80,19 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main">
 
         <section id="home" class="hero">
-            <video class="hero-video" autoplay loop muted playsinline preload="auto">
+            <video class="hero-video" autoplay loop muted playsinline preload="auto" poster="./img/hero-poster.jpg">
                 <source src="./img/cilindros-hero.mp4" type="video/mp4">
                 Seu navegador não suporta vídeos HTML5.
             </video>
 
             <div class="hero-content">
                 <h1>SERRA GÁS</h1>
-                <h1>Gases Medicinais e Industriais de Excelência</h1>
+                <h2>Gases Medicinais e Industriais de Excelência</h2>
                 <p>Fornecimento confiável para indústrias, clínicas, hospitais e setor alimentício.</p>
-                <a href="#contato" class="cta-button">Solicitar Orçamento</a>
+                <a href="#contato" class="cta-button" aria-label="Ir para formulário de orçamento">Solicitar Orçamento</a>
             </div>
         </section>
 
@@ -94,12 +125,15 @@
         <section id="locacao" class="section" style="text-align: center;">
             <h2 class="section-title">Venda e Locação de Cilindros</h2>
 
-            <h2 class="litros">
+            <p class="litros">
                 50L - 40L - 20L - 15L - 10L - 7L - 3L
-            </h2>
+            </p>
 
             <div class="product-card1">
-                <img src="./img/litroscilindros.png" alt="Tamanhos de cilindros para gases - 50L, 40L, 20L, 15L, 10L, 7L e 3L" class="product-image" loading="lazy">
+                <img src="./img/litroscilindros.png" 
+                     alt="Tamanhos de cilindros para gases - 50L, 40L, 20L, 15L, 10L, 7L e 3L" 
+                     class="product-image" 
+                     loading="lazy">
             </div>
         </section>
         
@@ -170,26 +204,48 @@
             <h2 class="section-title">Entre em Contato</h2>
 
             <div class="contact-form">
-                <form onsubmit="handleSubmit(event)" id="contact-form">
+                <form onsubmit="handleSubmit(event)" id="contact-form" novalidate>
 
                     <div class="form-group">
                         <label for="nome">Nome Completo *</label>
-                        <input type="text" id="nome" name="nome" required minlength="3" aria-required="true">
+                        <input type="text" 
+                               id="nome" 
+                               name="nome" 
+                               required 
+                               minlength="3" 
+                               aria-required="true"
+                               placeholder="Seu nome completo">
                     </div>
 
                     <div class="form-group">
                         <label for="email">E-mail *</label>
-                        <input type="email" id="email" name="email" required aria-required="true">
+                        <input type="email" 
+                               id="email" 
+                               name="email" 
+                               required 
+                               aria-required="true"
+                               placeholder="seu@email.com">
                     </div>
 
                     <div class="form-group">
                         <label for="telefone">Telefone *</label>
-                        <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000" maxlength="15" aria-required="true">
+                        <input type="tel" 
+                               id="telefone" 
+                               name="telefone" 
+                               required 
+                               placeholder="(00) 00000-0000" 
+                               maxlength="15" 
+                               aria-required="true">
                     </div>
 
                     <div class="form-group">
                         <label for="mensagem">Mensagem *</label>
-                        <textarea id="mensagem" name="mensagem" required minlength="10" aria-required="true"></textarea>
+                        <textarea id="mensagem" 
+                                  name="mensagem" 
+                                  required 
+                                  minlength="10" 
+                                  aria-required="true"
+                                  placeholder="Como podemos ajudar?"></textarea>
                     </div>
 
                     <button type="submit" class="submit-button" id="submit-btn">
@@ -209,12 +265,24 @@
         <p>&copy; 2026 Serra Gás - Gases Medicinais. Todos os direitos reservados.</p>
         <p>
             Criado e planejado por
-            <a href="https://portfolio-renan-dev.vercel.app/" target="_blank" style="color: white; text-decoration: none;">
+            <a href="https://portfolio-renan-dev.vercel.app/" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="color: white; text-decoration: none;">
                 RenanDev
             </a>
         </p>
     </footer>
 
-    <script src="/menu.js"></script>
+    <script src="./menu.js"></script>
+
+    <!-- Google Analytics (substitua SEU-ID-AQUI pelo seu ID real) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=SEU-ID-AQUI"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'SEU-ID-AQUI');
+    </script>
 </body>
 </html>
