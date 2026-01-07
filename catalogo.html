@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Cilindros e Equipamentos - Serra Gás</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .catalogo-header {
+            background: #2d4370;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .catalogo-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .catalogo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .catalogo-item {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .catalogo-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .catalogo-item img {
+            width: 120px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .catalogo-item h3 {
+            margin-bottom: .5rem;
+            color: #2d4370;
+        }
+
+        .voltar-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            background: #2d4370;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="catalogo-header">
+        <h1>Catálogo Completo</h1>
+        <p>Cilindros · Reguladores · Válvulas · Equipamentos</p>
+    </header>
+
+    <section class="catalogo-section">
+
+        <h2 style="text-align:center; color:#2d4370; margin-bottom:2rem;">Cilindros</h2>
+
+        <div class="catalogo-grid">
+            <div class="catalogo-item">
+                <img src="./img/cilindro-50l.png" alt="Cilindro 50L">
+                <h3>Cilindro 50 Litros</h3>
+                <p>Alta capacidade para uso industrial e hospitalar.</p>
+                <h2>R$1.799,00</h2>
+            </div>
+
+            <div class="catalogo-item">
+                <img src="./img/cilindro-20l.png" alt="Cilindro 20L">
+                <h3>Cilindro 20 Litros</h3>
+                <p>Ideal para uso portátil e entrega rápida.</p>
+                <h2>R$ 2.519,90</h2>
+            </div>
+
+            <div class="catalogo-item">
+                <img src="./img/cilindro-3l.png" alt="Cilindro 3L">
+                <h3>Cilindro 3 Litros</h3>
+                <p>Compacto e eficiente para usos diversos.</p>
+                <h2>R$ 199,90</h2>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="catalogo-section">
+
+        <h2 style="text-align:center; color:#2d4370; margin-bottom:2rem;">Equipamentos</h2>
+
+        <div class="catalogo-grid">
+
+            <div class="catalogo-item">
+                <img src="./img/regulador-oxigenio.png" alt="Regulador">
+                <h3>Regulador de Oxigênio</h3>
+                <p>Precisão e segurança para aplicações médicas.</p>
+                <h2>R$ 349,99</h2>
+            </div>
+
+            <div class="catalogo-item">
+                <img src="./img/valvula.png" alt="Válvula">
+                <h3>Válvulas para Cilindros</h3>
+                <p>Compatíveis com todos os modelos padrão.</p>
+                <h2>R$ 149,99</h2>
+            </div>
+
+            <div class="catalogo-item">
+                <img src="./img/carrinho-cilindro.png" alt="Carrinho">
+                <h3>Carrinhos para Cilindros</h3>
+                <p>Transporte seguro e fácil para qualquer cilindro.</p>
+                <h2>R$ 299,90</h2>
+            </div>
+
+        </div>
+
+        <div style="text-align:center;">
+            <a href="index.html" class="voltar-btn">← Voltar ao Site</a>
+        </div>
+
+    </section>
+
+</body>
+</html>

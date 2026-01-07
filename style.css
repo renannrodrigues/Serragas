@@ -5,7 +5,7 @@
 }
 
 html {
-    scroll-padding-top: 120px; 
+    scroll-padding-top: 120px;
 }
 
 body {
@@ -15,10 +15,11 @@ body {
     background: #fff;
 }
 
+/* Header */
 header {
     background: linear-gradient(135deg, #2d4370 0%, #1a771e 100%);
     color: white;
-    padding: .05rem 0;
+    padding: 0.05rem 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -49,12 +50,12 @@ nav {
 .logo-text {
     display: flex;
     align-items: center;
-    gap: .4rem;
+    gap: 0.4rem;
 }
 
 .top-info {
     display: flex;
-    gap: 20px; 
+    gap: 20px;
     align-items: center;
 }
 
@@ -87,7 +88,7 @@ nav {
 }
 
 .nav-links a {
-    color: white;
+    color: rgb(2, 0, 0);
     text-decoration: none;
     font-weight: 500;
     transition: opacity 0.3s;
@@ -112,6 +113,7 @@ nav {
     transition: 0.3s;
 }
 
+/* Hero */
 .hero {
     position: relative;
     width: 100%;
@@ -124,7 +126,6 @@ nav {
     color: white;
 }
 
-/* fundo com vídeo */
 .hero-video {
     position: absolute;
     top: 0;
@@ -135,7 +136,6 @@ nav {
     z-index: 0;
 }
 
-/* camada escurecida */
 .hero::before {
     content: "";
     position: absolute;
@@ -144,7 +144,6 @@ nav {
     z-index: 1;
 }
 
-/* conteúdo por cima do vídeo */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -180,6 +179,7 @@ nav {
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
+/* Sections */
 .section {
     max-width: 1200px;
     margin: 0 auto;
@@ -194,6 +194,7 @@ nav {
     letter-spacing: 1px;
 }
 
+/* Products */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -244,6 +245,7 @@ nav {
     border-radius: 8px;
 }
 
+/* Features */
 .features {
     background: #f8faf8;
 }
@@ -274,6 +276,7 @@ nav {
     color: #2d4370;
 }
 
+/* About */
 .about {
     background: linear-gradient(135deg, #2d4370 0%, #1a771e 100%);
     color: white;
@@ -297,6 +300,7 @@ nav {
     margin-bottom: 1rem;
 }
 
+/* Contact Form */
 .contact-form {
     background: white;
     padding: 3rem;
@@ -356,6 +360,7 @@ nav {
     transform: scale(1.02);
 }
 
+/* Footer */
 footer {
     background: #1a1a1a;
     color: white;
@@ -363,6 +368,7 @@ footer {
     padding: 2rem;
 }
 
+/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -374,8 +380,8 @@ footer {
     }
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-
     .logo img {
         height: 60px;
     }
