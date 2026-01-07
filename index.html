@@ -26,26 +26,25 @@
                     </a>
 
                     <a href="https://www.instagram.com/kldserragas" target="_blank" class="icon-link">
-                    <img src="./img/instagram.png" alt="Instagram">
-                    <span>@kldserragas</span>
-                </a>
-            </div>
+                        <img src="./img/instagram.png" alt="Instagram">
+                        <span>@kldserragas</span>
+                    </a>
                 </div>
             </div>
 
-            <div class="hamburger" onclick="toggleMenu()">
+            <button class="hamburger" onclick="toggleMenu()" aria-label="Menu de navegação" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
 
             <ul class="nav-links">
-                <a href="catalogo.html" class="cta-button" target="_blank">Catálogo</a>                
-                <li><a href="#home">Início</a></li>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#locacao">Venda e Locação de cilindros</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="catalogo.html" class="cta-button">Catálogo</a></li>
+                <li><a href="#home" class="nav-link">Início</a></li>
+                <li><a href="#produtos" class="nav-link">Produtos</a></li>
+                <li><a href="#locacao" class="nav-link">Venda e Locação</a></li>
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -53,17 +52,18 @@
     <main>
 
         <section id="home" class="hero">
-        <video class="hero-video" autoplay loop muted playsinline>
-        <source src="./img/cilindros-hero.mp4" type="video/mp4">
-        </video>
+            <video class="hero-video" autoplay loop muted playsinline preload="auto">
+                <source src="./img/cilindros-hero.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos HTML5.
+            </video>
 
-    <div class="hero-content">
-        <h1>SERRA GÁS</h1>
-        <h1>Gases Medicinais e Industriais de Excelência</h1>
-        <p>Fornecimento confiável para indústrias, clínicas, hospitais e setor alimentício.</p>
-        <a href="#contato" class="cta-button">Solicitar Orçamento</a>
-    </div>
-</section>
+            <div class="hero-content">
+                <h1>SERRA GÁS</h1>
+                <h1>Gases Medicinais e Industriais de Excelência</h1>
+                <p>Fornecimento confiável para indústrias, clínicas, hospitais e setor alimentício.</p>
+                <a href="#contato" class="cta-button">Solicitar Orçamento</a>
+            </div>
+        </section>
 
         <section id="produtos" class="section">
             <h2 class="section-title">Nossos Produtos</h2>
@@ -71,19 +71,19 @@
             <div class="products-grid">
 
                 <article class="product-card">
-                    <div class="product-icon">🔬</div>
+                    <div class="product-icon" aria-hidden="true">🔬</div>
                     <h3>Gases Medicinais</h3>
-                    <p>Oxigênio (O₂), Óxido Nitroso (N₂O), Ar Medicinal,Dióxido de Carbono (CO₂), Óxido Nítrico (NO), Nitrogênio (N₂) e Hélio (He) .</p>
+                    <p>Oxigênio (O₂), Óxido Nitroso (N₂O), Ar Medicinal, Dióxido de Carbono (CO₂), Óxido Nítrico (NO), Nitrogênio (N₂) e Hélio (He).</p>
                 </article>
 
                 <article class="product-card">
-                    <div class="product-icon">⚡</div>
+                    <div class="product-icon" aria-hidden="true">⚡</div>
                     <h3>Gases Industriais</h3>
-                    <p> Hidrogênio industrial · Nitrogênio líquido · Argônio · Dióxido de carbono · Oxigênio · Hélio</p>
+                    <p>Hidrogênio industrial · Nitrogênio líquido · Argônio · Dióxido de carbono · Oxigênio · Hélio</p>
                 </article>
 
                 <article class="product-card">
-                    <div class="product-icon">🍺</div>
+                    <div class="product-icon" aria-hidden="true">🍺</div>
                     <h3>Gases Alimentícios</h3>
                     <p>CO₂ alimentício - Nitrogênio - Misturas para bebidas e conservação.</p>
                 </article>
@@ -94,12 +94,12 @@
         <section id="locacao" class="section" style="text-align: center;">
             <h2 class="section-title">Venda e Locação de Cilindros</h2>
 
-                <h2 class="litros">
-                    50L - 40L - 20L - 15L - 10L - 7L - 3L
-                </h2>
+            <h2 class="litros">
+                50L - 40L - 20L - 15L - 10L - 7L - 3L
+            </h2>
 
             <div class="product-card1">
-            <img src="./img/litroscilindros.png" alt="Tamanhos de cilindros para gases" class="product-image">
+                <img src="./img/litroscilindros.png" alt="Tamanhos de cilindros para gases - 50L, 40L, 20L, 15L, 10L, 7L e 3L" class="product-image" loading="lazy">
             </div>
         </section>
         
@@ -111,25 +111,25 @@
                 <div class="features-grid">
 
                     <div class="feature-item">
-                        <div class="feature-icon">✓</div>
+                        <div class="feature-icon" aria-hidden="true">✓</div>
                         <h3>Certificação Total</h3>
                         <p>Produtos certificados pela ANVISA e conforme normas sanitárias.</p>
                     </div>
 
                     <div class="feature-item">
-                        <div class="feature-icon">🚚</div>
+                        <div class="feature-icon" aria-hidden="true">🚚</div>
                         <h3>Entrega Rápida</h3>
                         <p>Logística eficiente com entregas programadas e emergenciais.</p>
                     </div>
 
                     <div class="feature-item">
-                        <div class="feature-icon">🔒</div>
+                        <div class="feature-icon" aria-hidden="true">🔒</div>
                         <h3>Segurança Garantida</h3>
                         <p>Cilindros inspecionados e manutenção preventiva regular.</p>
                     </div>
 
                     <div class="feature-item">
-                        <div class="feature-icon">👨‍⚕️</div>
+                        <div class="feature-icon" aria-hidden="true">👨‍⚕️</div>
                         <h3>Suporte Técnico</h3>
                         <p>Equipe treinada para orientações e uso adequado dos gases.</p>
                     </div>
@@ -170,29 +170,34 @@
             <h2 class="section-title">Entre em Contato</h2>
 
             <div class="contact-form">
-                <form onsubmit="handleSubmit(event)">
+                <form onsubmit="handleSubmit(event)" id="contact-form">
 
                     <div class="form-group">
-                        <label for="nome">Nome Completo</label>
-                        <input type="text" id="nome" name="nome" required>
+                        <label for="nome">Nome Completo *</label>
+                        <input type="text" id="nome" name="nome" required minlength="3" aria-required="true">
                     </div>
 
                     <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
                     </div>
 
                     <div class="form-group">
-                        <label for="telefone">Telefone</label>
-                        <input type="tel" id="telefone" name="telefone" required>
+                        <label for="telefone">Telefone *</label>
+                        <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000" maxlength="15" aria-required="true">
                     </div>
 
                     <div class="form-group">
-                        <label for="mensagem">Mensagem</label>
-                        <textarea id="mensagem" name="mensagem" required></textarea>
+                        <label for="mensagem">Mensagem *</label>
+                        <textarea id="mensagem" name="mensagem" required minlength="10" aria-required="true"></textarea>
                     </div>
 
-                    <button type="submit" class="submit-button">Enviar Mensagem</button>
+                    <button type="submit" class="submit-button" id="submit-btn">
+                        <span class="btn-text">Enviar Mensagem</span>
+                        <span class="btn-loading" style="display: none;">
+                            <span class="spinner"></span> Enviando...
+                        </span>
+                    </button>
 
                 </form>
             </div>
@@ -206,11 +211,10 @@
             Criado e planejado por
             <a href="https://portfolio-renan-dev.vercel.app/" target="_blank" style="color: white; text-decoration: none;">
                 RenanDev
- 
             </a>
         </p>
     </footer>
 
-    <script src="menu.js"></script>
+    <script src="/menu.js"></script>
 </body>
 </html>
