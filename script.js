@@ -143,7 +143,7 @@ const catalogModal = {
         this.el.querySelector('.modal-overlay').onclick = () => this.close();
         this.el.querySelector('.modal-close').onclick = () => this.close();
         this.el.querySelector('.btn-modal-primary').onclick = () => {
-            window.open('catalogoserragas1.pdf', '_blank');
+            window.open('./catalogoserragas1.pdf', '_blank');
             this.close();
         };
     },
