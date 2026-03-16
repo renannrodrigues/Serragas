@@ -454,6 +454,41 @@
     .sfoot a:hover { text-decoration: underline; }
 
     .h { display: none !important; }
+
+    /* ── VARIANT CARD ── */
+    .pcard-v {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        align-items: stretch;
+    }
+    .pcard-v .pimg {
+        width: 200px; min-width: 200px; height: auto;
+        border-radius: var(--r) 0 0 var(--r);
+    }
+    @media(max-width:600px){
+        .pcard-v { flex-direction: column; }
+        .pcard-v .pimg { width: 100%; min-width: 0; height: 165px; border-radius: var(--r) var(--r) 0 0; }
+    }
+    .pvar-lbl {
+        font-size: .65rem; font-weight: 700;
+        text-transform: uppercase; letter-spacing: 1px;
+        color: var(--muted2); margin-bottom: .45rem;
+        display: flex; align-items: center; gap: .35rem;
+    }
+    .pvar-lbl::after { content: '▾'; color: var(--blue2); }
+    .pvar-wrap { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: .85rem; }
+    .pvar {
+        padding: .3rem .82rem; border-radius: 999px;
+        border: 1.5px solid var(--brd2);
+        background: var(--bg3); color: var(--muted);
+        font-family: inherit; font-size: .76rem; font-weight: 600;
+        cursor: pointer; transition: all .18s;
+        white-space: nowrap;
+    }
+    .pvar:hover { border-color: var(--blue); color: var(--text); background: var(--blue3); }
+    .pvar.on { background: var(--blue); border-color: var(--blue); color: #fff; }
+    .pprice-wait { font-size: .73rem; color: var(--muted2); font-weight: 500; }
+    .badd:disabled { opacity: .4; cursor: not-allowed; transform: none !important; }
     </style>
 </head>
 <body>
@@ -544,49 +579,23 @@
 
         <!-- MAÇARICO SOLDA -->
         <section class="csec" id="sec-ms">
-            <div class="chead"><div class="cico ci-or">🔥</div><h2>Maçarico de Solda</h2><span class="cnt">4 produtos</span></div>
+            <div class="chead"><div class="cico ci-or">🔥</div><h2>Maçarico de Solda</h2><span class="cnt">4 modelos</span></div>
             <div class="pgrid">
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=500&q=80" alt="SM-200" loading="lazy"><span class="ptag">Solda</span></div>
+            <div class="pcard pcard-v">
+                    <div class="pimg"><img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=500&q=80" alt="Maçarico de Solda" loading="lazy"><span class="ptag">Solda</span></div>
                     <div class="pbody">
-                        <div class="pname">Maçarico de Solda SM-200</div>
-                        <div class="pdesc">Leve e versátil, punho anatômico. Ideal para chapas até 14mm. 230mm de comprimento.</div>
-                        <div class="pfoot">
-                            <div class="pprice"><small>a partir de</small>R$ 185,00</div>
-                            <button class="badd" onclick="add(this,'SM-200 Solda',185,'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=80&q=60')">+</button>
+                        <div class="pname">Maçarico de Solda</div>
+                        <div class="pdesc" id="ms-desc">Latão forjado, punho anatômico. Selecione o modelo para ver o preço.</div>
+                        <div class="pvar-lbl">Modelo</div>
+                        <div class="pvar-wrap">
+                <button class="pvar" data-price="185" data-name="Maçarico de Solda SM-200" data-desc="Leve e versátil, punho anatômico. Ideal para chapas até 14mm. 230mm de comprimento." onclick="selVar(this,'ms')">SM-200</button>
+                <button class="pvar" data-price="245" data-name="Maçarico de Solda SM-201" data-desc="Robusto, punho anatômico. Chapas até 127mm. Compatível com cabeça cortadora PCW-201." onclick="selVar(this,'ms')">SM-201</button>
+                <button class="pvar" data-price="389" data-name="Maçarico de Solda SM-X21" data-desc="Alta capacidade. Solda, corte, aquecimento e desempeno. Tipo misturador." onclick="selVar(this,'ms')">SM-X21</button>
+                <button class="pvar" data-price="320" data-name="Maçarico Aquecimento SM-601" data-desc="Desempeno por chama e aquecimento médio/grande porte. Alta performance, mistura no bico." onclick="selVar(this,'ms')">SM-601 Aquec.</button>
                         </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&q=80" alt="SM-201" loading="lazy"><span class="ptag">Solda</span></div>
-                    <div class="pbody">
-                        <div class="pname">Maçarico de Solda SM-201</div>
-                        <div class="pdesc">Robusto, punho anatômico. Chapas até 127mm. Compatível com cabeça cortadora PCW-201.</div>
                         <div class="pfoot">
-                            <div class="pprice"><small>a partir de</small>R$ 245,00</div>
-                            <button class="badd" onclick="add(this,'SM-201 Solda',245,'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=80&q=60')">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=500&q=80" alt="SM-X21" loading="lazy"><span class="ptag">Solda</span></div>
-                    <div class="pbody">
-                        <div class="pname">Maçarico de Solda SM-X21</div>
-                        <div class="pdesc">Alta capacidade. Solda, corte, aquecimento e desempeno. Tipo misturador.</div>
-                        <div class="pfoot">
-                            <div class="pprice"><small>a partir de</small>R$ 389,00</div>
-                            <button class="badd" onclick="add(this,'SM-X21 Solda',389,'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=80&q=60')">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=500&q=80" alt="SM-601" loading="lazy"><span class="ptag">Aquecimento</span></div>
-                    <div class="pbody">
-                        <div class="pname">Maçarico Aquecimento SM-601</div>
-                        <div class="pdesc">Desempeno por chama e aquecimento médio/grande porte. Alta performance, mistura no bico.</div>
-                        <div class="pfoot">
-                            <div class="pprice"><small>a partir de</small>R$ 320,00</div>
-                            <button class="badd" onclick="add(this,'SM-601 Aquecimento',320,'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=80&q=60')">+</button>
+                            <div class="pprice" id="ms-price"><span class="pprice-wait">← selecione o modelo</span></div>
+                            <button class="badd" id="ms-add" onclick="addVar('ms','https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=80&q=80')" disabled>+</button>
                         </div>
                     </div>
                 </div>
@@ -595,60 +604,24 @@
 
         <!-- MAÇARICO CORTE -->
         <section class="csec" id="sec-mc">
-            <div class="chead"><div class="cico ci-rd">✂️</div><h2>Maçarico de Corte</h2><span class="cnt">5 produtos</span></div>
+            <div class="chead"><div class="cico ci-rd">✂️</div><h2>Maçarico de Corte</h2><span class="cnt">5 modelos</span></div>
             <div class="pgrid">
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=500&q=80" alt="SM-531W" loading="lazy"><span class="ptag">Corte</span></div>
+            <div class="pcard pcard-v">
+                    <div class="pimg"><img src="https://images.unsplash.com/photo-1611633002310-d8a3211ddfdd?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Maçarico de Corte" loading="lazy"><span class="ptag">Corte</span></div>
                     <div class="pbody">
-                        <div class="pname">Maçarico de Corte SM-531W</div>
-                        <div class="pdesc">Trabalhos leves e médios até 300mm. Latão forjado. Tubos condutores em aço inoxidável.</div>
-                        <div class="pfoot">
-                            <div class="pprice"><small>a partir de</small>R$ 285,00</div>
-                            <button class="badd" onclick="add(this,'SM-531W Corte',285,'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=80&q=60')">+</button>
+                        <div class="pname">Maçarico de Corte</div>
+                        <div class="pdesc" id="mc-desc">Latão forjado, tubos em aço inoxidável. Selecione o modelo para ver o preço.</div>
+                        <div class="pvar-lbl">Modelo</div>
+                        <div class="pvar-wrap">
+                <button class="pvar" data-price="285" data-name="Maçarico de Corte SM-531W" data-desc="Trabalhos leves e médios até 300mm. Latão forjado. Tubos condutores em aço inoxidável." onclick="selVar(this,'mc')">SM-531W</button>
+                <button class="pvar" data-price="310" data-name="Maçarico de Corte SM-511" data-desc="Mistura no bico — seguro contra retrocesso. Latão forjado, fuso em inox. Diversos tamanhos." onclick="selVar(this,'mc')">SM-511</button>
+                <button class="pvar" data-price="265" data-name="Maçarico de Corte Sider 7" data-desc="Para acetileno, GLP, propano, gás natural e MAPP. Injetor eficiente de baixo consumo." onclick="selVar(this,'mc')">Sider 7</button>
+                <button class="pvar" data-price="195" data-name="Cabeça Cortadora PCW-201" data-desc="Para SM-201. Oxicorte. Bicos 1502 (acetileno) e 1503 (GLP) com 2 sedes." onclick="selVar(this,'mc')">PCW-201</button>
+                <button class="pvar" data-price="215" data-name="Cabeça Cortadora SM-X21" data-desc="Tipo misturador de alta capacidade. Para uso com maçarico SM-X21." onclick="selVar(this,'mc')">SM-X21</button>
                         </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=501&q=80" alt="SM-511" loading="lazy"><span class="ptag">Corte</span></div>
-                    <div class="pbody">
-                        <div class="pname">Maçarico de Corte SM-511</div>
-                        <div class="pdesc">Mistura no bico — seguro contra retrocesso. Latão forjado, fuso em inox. Diversos tamanhos.</div>
                         <div class="pfoot">
-                            <div class="pprice"><small>a partir de</small>R$ 310,00</div>
-                            <button class="badd" onclick="add(this,'SM-511 Corte',310,'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=81&q=60')">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=500&q=80" alt="Sider 7" loading="lazy"><span class="ptag">Corte</span></div>
-                    <div class="pbody">
-                        <div class="pname">Maçarico de Corte Sider 7</div>
-                        <div class="pdesc">Para acetileno, GLP, propano, gás natural e MAPP. Injetor eficiente de baixo consumo.</div>
-                        <div class="pfoot">
-                            <div class="pprice"><small>a partir de</small>R$ 265,00</div>
-                            <button class="badd" onclick="add(this,'Sider 7 Corte',265,'https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=80&q=60')">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=500&q=80" alt="PCW-201" loading="lazy"><span class="ptag">Acessório</span></div>
-                    <div class="pbody">
-                        <div class="pname">Cabeça Cortadora PCW-201</div>
-                        <div class="pdesc">Para SM-201. Oxicorte. Bicos 1502 (acetileno) e 1503 (GLP) com 2 sedes.</div>
-                        <div class="pfoot">
-                            <div class="pprice"><small>a partir de</small>R$ 195,00</div>
-                            <button class="badd" onclick="add(this,'Cabeça PCW-201',195,'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=80&q=60')">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=501&q=80" alt="SM-X21 Cabeça" loading="lazy"><span class="ptag">Acessório</span></div>
-                    <div class="pbody">
-                        <div class="pname">Cabeça Cortadora SM-X21</div>
-                        <div class="pdesc">Tipo misturador de alta capacidade. Para uso com maçarico SM-X21.</div>
-                        <div class="pfoot">
-                            <div class="pprice"><small>a partir de</small>R$ 215,00</div>
-                            <button class="badd" onclick="add(this,'Cabeça SM-X21',215,'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=81&q=60')">+</button>
+                            <div class="pprice" id="mc-price"><span class="pprice-wait">← selecione o modelo</span></div>
+                            <button class="badd" id="mc-add" onclick="addVar('mc','https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=80&q=80')" disabled>+</button>
                         </div>
                     </div>
                 </div>
@@ -657,49 +630,23 @@
 
         <!-- CORTA CHAMA -->
         <section class="csec" id="sec-cc">
-            <div class="chead"><div class="cico ci-bl">🛡️</div><h2>Corta Chama — Acetileno &amp; Oxigênio</h2><span class="cnt">4 produtos</span></div>
+            <div class="chead"><div class="cico ci-bl">🛡️</div><h2>Corta Chama — Acetileno &amp; Oxigênio</h2><span class="cnt">4 modelos</span></div>
             <div class="pgrid">
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&q=80" alt="VCR-20" loading="lazy"><span class="ptag">Corta Chama</span></div>
+            <div class="pcard pcard-v">
+                    <div class="pimg"><img src="https://images.unsplash.com/photo-1689961476760-4a6b2461eec0?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Válvula Corta Chama" loading="lazy"><span class="ptag">Corta Chama</span></div>
                     <div class="pbody">
-                        <div class="pname">Válvula Corta Chama VCR-20</div>
-                        <div class="pdesc">Para maçarico. Acetileno/GLP e Oxigênio. Uso obrigatório conforme NR-18.</div>
-                        <div class="pfoot">
-                            <div class="pprice">R$ 89,00</div>
-                            <button class="badd" onclick="add(this,'VCR-20 Maçarico',89,'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=80&q=60')">+</button>
+                        <div class="pname">Válvula Corta Chama</div>
+                        <div class="pdesc" id="cc-desc">Uso obrigatório conforme NR-18. Selecione o modelo para ver o preço.</div>
+                        <div class="pvar-lbl">Modelo</div>
+                        <div class="pvar-wrap">
+                <button class="pvar" data-price="89" data-name="Válvula Corta Chama VCR-20" data-desc="Para maçarico. Acetileno/GLP e Oxigênio. Uso obrigatório conforme NR-18." onclick="selVar(this,'cc')">VCR-20 (maçarico)</button>
+                <button class="pvar" data-price="95" data-name="Válvula Corta Chama VCR-30" data-desc="Para regulador de pressão. Acetileno/GLP e Oxigênio. Obrigatório pela NR-18." onclick="selVar(this,'cc')">VCR-30 (regulador)</button>
+                <button class="pvar" data-price="145" data-name="Válvula VCR-50 Suprimento" data-desc="4 funções de segurança. Aprovada pelas normas EN730, DIN8521, ISO5175 e BS6158." onclick="selVar(this,'cc')">VCR-50 (suprimento)</button>
+                <button class="pvar" data-price="65" data-name="Válvula Unidirecional Anti Retrocesso" data-desc="Impede reversão dos gases no regulador. Reduz risco de explosão nos equipamentos." onclick="selVar(this,'cc')">Unidirecional</button>
                         </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="VCR-30" loading="lazy"><span class="ptag">Corta Chama</span></div>
-                    <div class="pbody">
-                        <div class="pname">Válvula Corta Chama VCR-30</div>
-                        <div class="pdesc">Para regulador de pressão. Acetileno/GLP e Oxigênio. Obrigatório pela NR-18.</div>
                         <div class="pfoot">
-                            <div class="pprice">R$ 95,00</div>
-                            <button class="badd" onclick="add(this,'VCR-30 Regulador',95,'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&q=60')">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?w=500&q=80" alt="VCR-50" loading="lazy"><span class="ptag">Corta Chama</span></div>
-                    <div class="pbody">
-                        <div class="pname">Válvula VCR-50 — Saída Suprimento</div>
-                        <div class="pdesc">4 funções de segurança. Aprovada pelas normas EN730, DIN8521, ISO5175 e BS6158.</div>
-                        <div class="pfoot">
-                            <div class="pprice">R$ 145,00</div>
-                            <button class="badd" onclick="add(this,'VCR-50 Suprimento',145,'https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?w=80&q=60')">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80" alt="Unidirecional" loading="lazy"><span class="ptag">Segurança</span></div>
-                    <div class="pbody">
-                        <div class="pname">Válvula Unidirecional Anti Retrocesso</div>
-                        <div class="pdesc">Impede reversão dos gases no regulador. Reduz risco de explosão nos equipamentos.</div>
-                        <div class="pfoot">
-                            <div class="pprice">R$ 65,00</div>
-                            <button class="badd" onclick="add(this,'Válvula Unidirecional',65,'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=80&q=60')">+</button>
+                            <div class="pprice" id="cc-price"><span class="pprice-wait">← selecione o modelo</span></div>
+                            <button class="badd" id="cc-add" onclick="addVar('cc','https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=80&q=80')" disabled>+</button>
                         </div>
                     </div>
                 </div>
@@ -708,71 +655,25 @@
 
         <!-- REGULADORES -->
         <section class="csec" id="sec-reg">
-            <div class="chead"><div class="cico ci-pu">⚙️</div><h2>Reguladores de Cilindro</h2><span class="cnt">6 produtos</span></div>
+            <div class="chead"><div class="cico ci-pu">⚙️</div><h2>Reguladores de Cilindro</h2><span class="cnt">6 modelos</span></div>
             <div class="pgrid">
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=500&q=80" alt="MOD 300 Acetileno" loading="lazy"><span class="ptag">Regulador</span></div>
+            <div class="pcard pcard-v">
+                    <div class="pimg"><img src="https://images.unsplash.com/photo-1694532438941-06bb0d95dae5?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Regulador de Cilindro" loading="lazy"><span class="ptag">Regulador</span></div>
                     <div class="pbody">
-                        <div class="pname">Regulador MOD.300 — Acetileno</div>
-                        <div class="pdesc">Simples estágio, alumínio anodizado. Corte até 300mm. Manopla com trava interna.</div>
-                        <div class="pfoot">
-                            <div class="pprice">R$ 235,00</div>
-                            <button class="badd" onclick="add(this,'Reg. MOD 300 Acetileno',235,'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=80&q=60')">+</button>
+                        <div class="pname">Regulador de Cilindro</div>
+                        <div class="pdesc" id="reg-desc">Alumínio anodizado, simples estágio. Selecione o modelo para ver o preço.</div>
+                        <div class="pvar-lbl">Modelo</div>
+                        <div class="pvar-wrap">
+                <button class="pvar" data-price="235" data-name="Regulador MOD.300 Acetileno" data-desc="Simples estágio, alumínio anodizado. Corte até 300mm. Manopla com trava interna." onclick="selVar(this,'reg')">MOD.300 Acetileno</button>
+                <button class="pvar" data-price="245" data-name="Regulador MOD.300 Oxigênio" data-desc="Simples estágio, alumínio anodizado. Vazão até 70 m³/h. Manopla com trava interna." onclick="selVar(this,'reg')">MOD.300 Oxigênio</button>
+                <button class="pvar" data-price="275" data-name="Regulador MOD.300 FL Argônio/CO₂" data-desc="Com fluxômetro. Para MIG/MAG/TIG. Argônio, CO₂ ou misturas. Simples estágio." onclick="selVar(this,'reg')">MOD.300 FL Argônio</button>
+                <button class="pvar" data-price="195" data-name="Regulador MOD.300 Hélio" data-desc="Para enchimento de balões infláveis. Bico flexível. Instalação sem ferramentas." onclick="selVar(this,'reg')">MOD.300 Hélio</button>
+                <button class="pvar" data-price="345" data-name="Regulador MOD.500 Alta Resistência" data-desc="Para trabalhos pesados. Tampa em cromo. Corte até 400mm. Vazão 100 m³/h (O₂)." onclick="selVar(this,'reg')">MOD.500</button>
+                <button class="pvar" data-price="485" data-name="Regulador MOD.600 Alta Pressão" data-desc="Refrigeração, extintores, prensas. 50, 100 ou 200 kgf/cm². Corpo em latão forjado." onclick="selVar(this,'reg')">MOD.600</button>
                         </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=501&q=80" alt="MOD 300 O2" loading="lazy"><span class="ptag">Regulador</span></div>
-                    <div class="pbody">
-                        <div class="pname">Regulador MOD.300 — Oxigênio</div>
-                        <div class="pdesc">Simples estágio, alumínio anodizado. Vazão até 70 m³/h. Manopla com trava interna.</div>
                         <div class="pfoot">
-                            <div class="pprice">R$ 245,00</div>
-                            <button class="badd" onclick="add(this,'Reg. MOD 300 Oxigênio',245,'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=81&q=60')">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=501&q=80" alt="MOD 300 FL" loading="lazy"><span class="ptag">Regulador</span></div>
-                    <div class="pbody">
-                        <div class="pname">Regulador MOD.300 FL — Argônio/CO₂</div>
-                        <div class="pdesc">Com fluxômetro. Para MIG/MAG/TIG. Argônio, CO₂ ou misturas. Simples estágio.</div>
-                        <div class="pfoot">
-                            <div class="pprice">R$ 275,00</div>
-                            <button class="badd" onclick="add(this,'Reg. MOD 300 FL Argônio',275,'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=81&q=60')">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=501&q=80" alt="MOD 500" loading="lazy"><span class="ptag">Regulador</span></div>
-                    <div class="pbody">
-                        <div class="pname">Regulador MOD.500 — Alta Resistência</div>
-                        <div class="pdesc">Para trabalhos pesados. Tampa em cromo. Corte até 400mm. Vazão 100 m³/h (O₂).</div>
-                        <div class="pfoot">
-                            <div class="pprice">R$ 345,00</div>
-                            <button class="badd" onclick="add(this,'Reg. MOD 500',345,'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=81&q=60')">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=501&q=80" alt="MOD 300 Hélio" loading="lazy"><span class="ptag">Regulador</span></div>
-                    <div class="pbody">
-                        <div class="pname">Regulador MOD.300 — Hélio (Balões)</div>
-                        <div class="pdesc">Para enchimento de balões infláveis. Bico flexível. Instalação sem ferramentas.</div>
-                        <div class="pfoot">
-                            <div class="pprice">R$ 195,00</div>
-                            <button class="badd" onclick="add(this,'Reg. MOD 300 Hélio',195,'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=81&q=60')">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=501&q=80" alt="MOD 600" loading="lazy"><span class="ptag">Alta Pressão</span></div>
-                    <div class="pbody">
-                        <div class="pname">Regulador MOD.600 — Alta Pressão</div>
-                        <div class="pdesc">Refrigeração, extintores, prensas. 50, 100 ou 200 kgf/cm². Corpo em latão forjado.</div>
-                        <div class="pfoot">
-                            <div class="pprice">R$ 485,00</div>
-                            <button class="badd" onclick="add(this,'Reg. MOD 600 Alta Pressão',485,'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=81&q=60')">+</button>
+                            <div class="pprice" id="reg-price"><span class="pprice-wait">← selecione o modelo</span></div>
+                            <button class="badd" id="reg-add" onclick="addVar('reg','https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=80&q=80')" disabled>+</button>
                         </div>
                     </div>
                 </div>
@@ -781,60 +682,24 @@
 
         <!-- BICOS CORTE -->
         <section class="csec" id="sec-bc">
-            <div class="chead"><div class="cico ci-gr">🎯</div><h2>Bicos de Corte</h2><span class="cnt">5 produtos</span></div>
+            <div class="chead"><div class="cico ci-gr">🎯</div><h2>Bicos de Corte</h2><span class="cnt">5 modelos</span></div>
             <div class="pgrid">
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=502&q=80" alt="Bico 1502" loading="lazy"><span class="ptag">Bico Corte</span></div>
+            <div class="pcard pcard-v">
+                    <div class="pimg"><img src="https://images.unsplash.com/photo-1575984399240-51a1b921b930?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bico de Corte" loading="lazy"><span class="ptag">Bico Corte</span></div>
                     <div class="pbody">
-                        <div class="pname">Bico de Corte 1502 — Acetileno (un)</div>
-                        <div class="pdesc">Corte de 1,6 a 305mm. Compatível com SM-201, SM-531W e SM-511.</div>
-                        <div class="pfoot">
-                            <div class="pprice">R$ 38,00</div>
-                            <button class="badd" onclick="add(this,'Bico 1502 Acetileno',38,'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=82&q=60')">+</button>
+                        <div class="pname">Bico de Corte</div>
+                        <div class="pdesc" id="bc-desc">Alta precisão de corte. Selecione o modelo (unitário) para ver o preço.</div>
+                        <div class="pvar-lbl">Modelo</div>
+                        <div class="pvar-wrap">
+                <button class="pvar" data-price="38" data-name="Bico de Corte 1502 Acetileno" data-desc="Corte de 1,6 a 305mm. Compatível com SM-201, SM-531W e SM-511." onclick="selVar(this,'bc')">1502 Acetileno</button>
+                <button class="pvar" data-price="38" data-name="Bico de Corte 1503 GLP" data-desc="Corte de 1 a 305mm. GLP / oxicombustível. Alta precisão de corte." onclick="selVar(this,'bc')">1503 GLP</button>
+                <button class="pvar" data-price="48" data-name="Bico ANME Acetileno SM-X21/511" data-desc="Linha 3 sedes. Corte 3 a 500mm. Para SM-X21 e SM-511. Mistura no bico." onclick="selVar(this,'bc')">ANME Acetileno</button>
+                <button class="pvar" data-price="48" data-name="Bico PNME GLP SM-X21/511" data-desc="Linha 3 sedes. Corte 3 a 500mm. GLP/oxicombustível. SM-X21 e SM-511." onclick="selVar(this,'bc')">PNME GLP</button>
+                <button class="pvar" data-price="55" data-name="Bico Aquecedor GLP 1H–5H" data-desc="Para SM-511 e SM-X21. Linha 2290. Diversos tamanhos disponíveis sob consulta." onclick="selVar(this,'bc')">Aquecedor GLP</button>
                         </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=502&q=80" alt="Bico 1503" loading="lazy"><span class="ptag">Bico Corte</span></div>
-                    <div class="pbody">
-                        <div class="pname">Bico de Corte 1503 — GLP (un)</div>
-                        <div class="pdesc">Corte de 1 a 305mm. GLP / oxicombustível. Alta precisão de corte.</div>
                         <div class="pfoot">
-                            <div class="pprice">R$ 38,00</div>
-                            <button class="badd" onclick="add(this,'Bico 1503 GLP',38,'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=82&q=60')">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=501&q=80" alt="Bico ANME" loading="lazy"><span class="ptag">Bico Corte</span></div>
-                    <div class="pbody">
-                        <div class="pname">Bico ANME — Acetileno SM-X21/511 (un)</div>
-                        <div class="pdesc">Linha 3 sedes. Corte 3 a 500mm. Para SM-X21 e SM-511. Mistura no bico.</div>
-                        <div class="pfoot">
-                            <div class="pprice">R$ 48,00</div>
-                            <button class="badd" onclick="add(this,'Bico ANME Acetileno',48,'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=81&q=60')">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=501&q=80" alt="Bico PNME" loading="lazy"><span class="ptag">Bico Corte</span></div>
-                    <div class="pbody">
-                        <div class="pname">Bico PNME — GLP SM-X21/511 (un)</div>
-                        <div class="pdesc">Linha 3 sedes. Corte 3 a 500mm. GLP/oxicombustível. SM-X21 e SM-511.</div>
-                        <div class="pfoot">
-                            <div class="pprice">R$ 48,00</div>
-                            <button class="badd" onclick="add(this,'Bico PNME GLP',48,'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=81&q=60')">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=502&q=80" alt="Bico Aquecedor" loading="lazy"><span class="ptag">Aquecedor</span></div>
-                    <div class="pbody">
-                        <div class="pname">Bico Aquecedor GLP 1H–5H (un)</div>
-                        <div class="pdesc">Para SM-511 e SM-X21. Linha 2290. Diversos tamanhos disponíveis sob consulta.</div>
-                        <div class="pfoot">
-                            <div class="pprice">R$ 55,00</div>
-                            <button class="badd" onclick="add(this,'Bico Aquecedor GLP',55,'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=82&q=60')">+</button>
+                            <div class="pprice" id="bc-price"><span class="pprice-wait">← selecione o modelo</span></div>
+                            <button class="badd" id="bc-add" onclick="addVar('bc','https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=80&q=80')" disabled>+</button>
                         </div>
                     </div>
                 </div>
@@ -843,38 +708,22 @@
 
         <!-- PASTILHA -->
         <section class="csec" id="sec-pas">
-            <div class="chead"><div class="cico ci-yw">⬛</div><h2>Pastilha de Solda</h2><span class="cnt">3 produtos</span></div>
+            <div class="chead"><div class="cico ci-yw">⬛</div><h2>Pastilha de Solda</h2><span class="cnt">3 modelos</span></div>
             <div class="pgrid">
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=501&q=80" alt="Tungstênio TIG" loading="lazy"><span class="ptag">TIG</span></div>
+            <div class="pcard pcard-v">
+                    <div class="pimg"><img src="https://images.unsplash.com/photo-1635170885149-14fa893b28c9?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pastilha de Solda" loading="lazy"><span class="ptag">Pastilha</span></div>
                     <div class="pbody">
-                        <div class="pname">Pastilha de Tungstênio TIG (cx 10un)</div>
-                        <div class="pdesc">Eletrodo de tungstênio puro ou torizado para soldagem TIG. Diversos diâmetros.</div>
-                        <div class="pfoot">
-                            <div class="pprice">R$ 45,00</div>
-                            <button class="badd" onclick="add(this,'Pastilha Tungstênio TIG cx10',45,'https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=81&q=60')">+</button>
+                        <div class="pname">Pastilha de Solda</div>
+                        <div class="pdesc" id="pas-desc">Alta resistência e temperatura. Selecione o tipo para ver o preço.</div>
+                        <div class="pvar-lbl">Modelo</div>
+                        <div class="pvar-wrap">
+                <button class="pvar" data-price="45" data-name="Pastilha Tungstênio TIG cx10" data-desc="Eletrodo de tungstênio puro ou torizado para soldagem TIG. Diversos diâmetros." onclick="selVar(this,'pas')">Tungstênio TIG (cx10)</button>
+                <button class="pvar" data-price="52" data-name="Pastilha Oxi-Acetileno cx" data-desc="Para brasagem e soldagem oxi-acetilênica. Alta temperatura e resistência mecânica." onclick="selVar(this,'pas')">Oxi-Acetileno (cx)</button>
+                <button class="pvar" data-price="28" data-name="Pastilha de Prata Brasagem" data-desc="Liga de prata para junções de alta resistência. Cobre, latão e inox." onclick="selVar(this,'pas')">Prata Brasagem (un)</button>
                         </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=503&q=80" alt="Oxi-Acetileno" loading="lazy"><span class="ptag">Oxi-Acetileno</span></div>
-                    <div class="pbody">
-                        <div class="pname">Pastilha Oxi-Acetileno (caixa)</div>
-                        <div class="pdesc">Para brasagem e soldagem oxi-acetilênica. Alta temperatura e resistência mecânica.</div>
                         <div class="pfoot">
-                            <div class="pprice">R$ 52,00</div>
-                            <button class="badd" onclick="add(this,'Pastilha Oxi-Acetileno cx',52,'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=83&q=60')">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=502&q=80" alt="Pastilha Prata" loading="lazy"><span class="ptag">Brasagem</span></div>
-                    <div class="pbody">
-                        <div class="pname">Pastilha de Prata para Brasagem (un)</div>
-                        <div class="pdesc">Liga de prata para junções de alta resistência. Cobre, latão e inox.</div>
-                        <div class="pfoot">
-                            <div class="pprice">R$ 28,00</div>
-                            <button class="badd" onclick="add(this,'Pastilha de Prata Brasagem',28,'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=82&q=60')">+</button>
+                            <div class="pprice" id="pas-price"><span class="pprice-wait">← selecione o modelo</span></div>
+                            <button class="badd" id="pas-add" onclick="addVar('pas','https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=80&q=80')" disabled>+</button>
                         </div>
                     </div>
                 </div>
@@ -883,49 +732,23 @@
 
         <!-- BIMETRO -->
         <section class="csec" id="sec-bim">
-            <div class="chead"><div class="cico ci-bl">📏</div><h2>Bimetro / Manômetro</h2><span class="cnt">4 produtos</span></div>
+            <div class="chead"><div class="cico ci-bl">📏</div><h2>Bimetro / Manômetro</h2><span class="cnt">4 modelos</span></div>
             <div class="pgrid">
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=502&q=80" alt="Manômetro Acetileno" loading="lazy"><span class="ptag">Manômetro</span></div>
+            <div class="pcard pcard-v">
+                    <div class="pimg"><img src="https://images.unsplash.com/photo-1674471361523-195aa08e69b5?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Manômetro / Bimetro" loading="lazy"><span class="ptag">Manômetro</span></div>
                     <div class="pbody">
-                        <div class="pname">Manômetro Bourdon 63mm — Acetileno</div>
-                        <div class="pdesc">Escala dupla kgf/cm² e PSI. Conexão ¼" NPT. Faixa até 3 kgf/cm².</div>
-                        <div class="pfoot">
-                            <div class="pprice">R$ 65,00</div>
-                            <button class="badd" onclick="add(this,'Manômetro Acetileno 63mm',65,'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=82&q=60')">+</button>
+                        <div class="pname">Manômetro / Bimetro</div>
+                        <div class="pdesc" id="bim-desc">Escalas duplas kgf/cm² e PSI. Selecione o modelo para ver o preço.</div>
+                        <div class="pvar-lbl">Modelo</div>
+                        <div class="pvar-wrap">
+                <button class="pvar" data-price="65" data-name="Manômetro Bourdon 63mm Acetileno" data-desc="Escala dupla kgf/cm² e PSI. Conexão 1/4 NPT. Faixa até 3 kgf/cm²." onclick="selVar(this,'bim')">Acetileno 63mm</button>
+                <button class="pvar" data-price="72" data-name="Manômetro 63mm Alta Pressão" data-desc="Para oxigênio e gases alta pressão. Escala até 315 kgf/cm². Conexão 1/4 NPT." onclick="selVar(this,'bim')">Alta Pressão 63mm</button>
+                <button class="pvar" data-price="85" data-name="Fluxômetro/Manômetro Vazão" data-desc="Escalas 30, 40 ou 50 l/min. Para MIG/MAG/TIG. Medidor de vazão de gás de proteção." onclick="selVar(this,'bim')">Fluxômetro (Vazão)</button>
+                <button class="pvar" data-price="155" data-name="Testador de Cilindros Kit" data-desc="Verifica pressão interna de cilindros. Conforme ABNT NBR 11725. Vários gases." onclick="selVar(this,'bim')">Testador Cilindros (kit)</button>
                         </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=503&q=80" alt="Manômetro Alta Pressão" loading="lazy"><span class="ptag">Manômetro</span></div>
-                    <div class="pbody">
-                        <div class="pname">Manômetro 63mm — Alta Pressão</div>
-                        <div class="pdesc">Para oxigênio e gases alta pressão. Escala até 315 kgf/cm². Conexão ¼" NPT.</div>
                         <div class="pfoot">
-                            <div class="pprice">R$ 72,00</div>
-                            <button class="badd" onclick="add(this,'Manômetro Alta Pressão 63mm',72,'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=83&q=60')">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=503&q=80" alt="Fluxômetro" loading="lazy"><span class="ptag">Fluxômetro</span></div>
-                    <div class="pbody">
-                        <div class="pname">Manômetro de Vazão — Fluxômetro</div>
-                        <div class="pdesc">Escalas 30, 40 ou 50 l/min. Para MIG/MAG/TIG. Medidor de vazão de gás de proteção.</div>
-                        <div class="pfoot">
-                            <div class="pprice">R$ 85,00</div>
-                            <button class="badd" onclick="add(this,'Fluxômetro/Manômetro Vazão',85,'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=83&q=60')">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="pcard">
-                    <div class="pimg"><img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=502&q=80" alt="Testador" loading="lazy"><span class="ptag">Testador</span></div>
-                    <div class="pbody">
-                        <div class="pname">Testador de Cilindros (Kit)</div>
-                        <div class="pdesc">Verifica pressão interna de cilindros. Conforme ABNT NBR 11725. Vários gases.</div>
-                        <div class="pfoot">
-                            <div class="pprice">R$ 155,00</div>
-                            <button class="badd" onclick="add(this,'Testador de Cilindros Kit',155,'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=82&q=60')">+</button>
+                            <div class="pprice" id="bim-price"><span class="pprice-wait">← selecione o modelo</span></div>
+                            <button class="badd" id="bim-add" onclick="addVar('bim','https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=80&q=80')" disabled>+</button>
                         </div>
                     </div>
                 </div>
@@ -1136,6 +959,29 @@ let _t;
 function toast(msg) {
     const el = $('tst'); el.textContent = msg; el.classList.add('up');
     clearTimeout(_t); _t = setTimeout(() => el.classList.remove('up'), 2600);
+}
+
+const varState = {};
+
+function selVar(btn, id) {
+    btn.closest('.pvar-wrap').querySelectorAll('.pvar').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    const price = parseFloat(btn.dataset.price);
+    varState[id] = { name: btn.dataset.name, price };
+    // update price
+    document.getElementById(id + '-price').innerHTML = fmt(price);
+    // update desc
+    const descEl = document.getElementById(id + '-desc');
+    if (descEl && btn.dataset.desc) descEl.textContent = btn.dataset.desc;
+    // enable add button
+    const addBtn = document.getElementById(id + '-add');
+    addBtn.disabled = false;
+}
+
+function addVar(id, img) {
+    const s = varState[id];
+    if (!s) { toast('❌ Selecione um modelo'); return; }
+    add(document.getElementById(id + '-add'), s.name, s.price, img);
 }
 
 render();
