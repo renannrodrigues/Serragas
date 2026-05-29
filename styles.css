@@ -1256,7 +1256,7 @@ body {
 .form-title {
     font-size: 1.5rem;
     font-weight: 700;
-    color: white;
+    color: rgb(12, 2, 2);
     margin-bottom: 1.5rem;
     text-align: center;
 }
@@ -1279,7 +1279,7 @@ body {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    color: white;
+    color: rgb(7, 3, 3);
     font-size: 1rem;
     font-family: inherit;
     transition: all 0.3s ease;
@@ -1287,7 +1287,7 @@ body {
 
 .form-input::placeholder,
 .form-textarea::placeholder {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(3, 2, 2, 0.4);
 }
 
 .form-input:focus,
