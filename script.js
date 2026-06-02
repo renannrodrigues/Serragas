@@ -115,50 +115,12 @@ const fadeObserver = new IntersectionObserver(entries => {
     });
 }, { threshold: 0.15 });
 
-$$('.produto-card, .diferencial-card, .cylinder').forEach(el => {
+$$('.produto-card, .diferencial-card, .cylinder, .gas-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = '0.6s ease';
     fadeObserver.observe(el);
 });
-
-/* CATÁLOGO MODAL */
-const catalogModal = {
-    el: null,
-
-    create() {
-        this.el = document.createElement('div');
-        this.el.className = 'catalog-modal';
-        this.el.innerHTML = `
-            <div class="modal-overlay"></div>
-            <div class="modal-content">
-                <button class="modal-close">✕</button>
-                <h3>Catálogo Serra Gás</h3>
-                <p>Baixe nosso catálogo completo</p>
-                <button class="btn-modal-primary">Baixar PDF</button>
-            </div>
-        `;
-        document.body.appendChild(this.el);
-
-        this.el.querySelector('.modal-overlay').onclick = () => this.close();
-        this.el.querySelector('.modal-close').onclick = () => this.close();
-        this.el.querySelector('.btn-modal-primary').onclick = () => {
-            window.open('./catalogoserragas1.pdf', '_blank');
-            this.close();
-        };
-    },
-
-    open() {
-        if (!this.el) this.create();
-        this.el.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    },
-
-    close() {
-        this.el.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-};
 
 /* FORMULÁRIO DE CONTATO - WHATSAPP */
 const contatoForm = $('contatoForm');
@@ -186,19 +148,6 @@ if (contatoForm) {
         
         // Limpar formulário após envio
         contatoForm.reset();
-    });
-}
-
-['btnCatalog', 'btnCatalogDownload'].forEach(id => {
-    const btn = $(id);
-    if (btn) btn.addEventListener('click', () => catalogModal.open());
-});
-
-const mobileCatalogBtn = document.querySelector('.btn-catalog-mobile');
-if (mobileCatalogBtn) {
-    mobileCatalogBtn.addEventListener('click', () => {
-        catalogModal.open();
-        mobileMenu?.classList.remove('active');
     });
 }
 
